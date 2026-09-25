@@ -12,6 +12,7 @@ print $cgi_object->header();
 
 # Retrieve the value of the skey parameter 
 my $input = $cgi_object->param('skey');
+$input = '' unless defined $input;
 
 # This is the hashtable storing a sample of archived articles in HTML format 
 my @articles = (
@@ -168,7 +169,8 @@ my @articles = (
 # Keep track of the number of hits using the count variable
 my $count = 0;
 foreach my $row (@articles) {
-   if ( $row->{searchkey} =~ /^$input$/i || $row->{searchkey} =~ /$input/i ) {
+   # \Q...\E treats the user's text literally, so input like "(" can't crash the regex
+   if ( $row->{searchkey} =~ /\Q$input\E/i ) {
       $count ++;
       print "$row->{content}";
    }

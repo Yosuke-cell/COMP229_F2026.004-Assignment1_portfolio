@@ -14,6 +14,7 @@ print $cgi_object->header();
 
 # Retrieve the value of the suggest parameter 
 my $input = $cgi_object->param('suggest');
+$input = '' unless defined $input;
 
 # This is the hashtable holding a list of the SBlogger keywords
 # This could just as easily placed in a MySQL database.
@@ -137,7 +138,7 @@ print "{\"matches\": [\n";
 
 # Loop through the list of keys to locate the number of hits
 foreach my $row (@keys) {
-   if ( $row->{key} =~ /^$input/i) {
+   if ( $row->{key} =~ /^\Q$input\E/i) {
       $count++;
       if ($count == 1) {
          print "\"$row->{key}\"\n"

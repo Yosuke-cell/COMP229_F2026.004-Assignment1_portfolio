@@ -116,6 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </body></html>`;
 
             const popup = window.open('', '_blank', 'width=700,height=600');
+            if (!popup) {
+                favMessage.textContent = 'Please allow pop-ups to view the zoomed image.';
+                return;
+            }
             popup.document.write(popupHtml);
             popup.document.close();
         });

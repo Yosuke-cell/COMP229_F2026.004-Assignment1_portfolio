@@ -169,7 +169,7 @@ function generateCalendar(year, month) {
 
       calendarBody.appendChild(row);
       
-      if (date > daysInMonth && nextMonthDate > 1) {
+      if (date > daysInMonth) {
          break;
       }
    }
@@ -185,22 +185,29 @@ function selectDate(cell) {
    selectedDate = cell.getAttribute("data-date");
    
    const dateField = document.getElementById("selectedDate");
-   dateField.value = new Date(selectedDate).toLocaleDateString();
+   dateField.value = toLocalDate(selectedDate).toLocaleDateString();
    
    // Display orders for this date
    displayOrdersForDate(selectedDate);
 }
 
+// "YYYY-MM-DD" is parsed as UTC by new Date(), which shows the previous day
+// in Toronto time, so build the date in local time instead
+function toLocalDate(dateStr) {
+   const [year, month, day] = dateStr.split("-").map(Number);
+   return new Date(year, month - 1, day);
+}
+
 function displayOrdersForDate(dateStr) {
    const ordersDisplay = document.getElementById("ordersDisplay");
    const ordersOnDate = orders.filter(order => order.date === dateStr);
-   
+
    if (ordersOnDate.length === 0) {
-      ordersDisplay.innerHTML = `<p class="no-orders">No orders for ${new Date(dateStr).toLocaleDateString()}. You can place a new order below!</p>`;
+      ordersDisplay.innerHTML = `<p class="no-orders">No orders for ${toLocalDate(dateStr).toLocaleDateString()}. You can place a new order below!</p>`;
       return;
    }
 
-   let html = `<div class="date-header">📅 Orders for ${new Date(dateStr).toLocaleDateString()}</div>`;
+   let html = `<div class="date-header">📅 Orders for ${toLocalDate(dateStr).toLocaleDateString()}</div>`;
    html += '<div class="orders-container">';
 
    ordersOnDate.forEach((order, index) => {
