@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Progress Restaurant - Order Estimate</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="order.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="branding">
+        <h1>THE PROGRESS RESTAURANT</h1>
+        <p>serving our customers</p>
+    </div>
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li class="dropdown">
+                <a href="menulist.html">MENU</a>
+                <ul class="dropdown-content">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="menulist.html">Menu List</a></li>
+                    <li><a href="order.html">Order Now</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="order.html">ESTIMATE</a></li>
+            <li><a href="location.html">LOCATION</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="sitemap.html">SITE MAP & CREDITS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content">
+    <h2>Order Estimate</h2>
+    <p>Select the items you would like to order and click "Calculate". Tax rate: 13%.</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Select</th>
+            <th>Menu Item</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="8.99"></td>
+            <td>Bruschetta ($8.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="6.99"></td>
+            <td>Focaccia Bread ($6.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="9.99"></td>
+            <td>Pasta Carbonara ($9.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="10.99"></td>
+            <td>Margherita Pizza ($10.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="12.99"></td>
+            <td>Mushroom Risotto ($12.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="13.99"></td>
+            <td>Spaghetti ($13.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="14.99"></td>
+            <td>Briyani ($14.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="12.99"></td>
+            <td>Tandoori Chicken ($12.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="10.99"></td>
+            <td>Butter Chicken ($10.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="2.99"></td>
+            <td>Steamed Rice ($2.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="13.99"></td>
+            <td>Fish Curry ($13.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="7.99"></td>
+            <td>Mutton Curry ($7.99)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item-checkbox" data-price="8.99"></td>
+            <td>Dosa ($8.99)</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button id="calculateBtn">Calculate</button>
+
+    <div class="order-summary">
+        <table>
+            <tr>
+                <td>Item total</td>
+                <td id="itemTotal">$0.00</td>
+            </tr>
+            <tr>
+                <td>Tax (13%)</td>
+                <td id="taxAmount">$0.00</td>
+            </tr>
+            <tr>
+                <td>Total with tax</td>
+                <td id="totalWithTax">$0.00</td>
+            </tr>
+        </table>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 The Progress Restaurant. All rights reserved.</p>
+</footer>
+</body>
+</html>

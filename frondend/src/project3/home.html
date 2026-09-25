@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Progress Restaurant - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="home.js"></script>
+</head>
+<body>
+<header>
+    <div class="container-header">
+        <div class="branding">
+            <h1>🍽️ THE PROGRESS RESTAURANT</h1>
+            <p>Fusion of Italian & Japanese Cuisine</p>
+        </div>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="home.html" class="active">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="menulist.html">MENU ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="menulist.html">Menu List</a></li>
+                        <li><a href="order.html">Order Now</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="order.html">ESTIMATE</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Welcome to The Progress Restaurant</h2>
+                <p class="subtitle">Experience the perfect blend of Italian elegance and Jaqpanese spice</p>
+                <p>
+                    Welcome to THE PROGRESS RESTAURANT, where culinary excellence meets warm hospitality!
+                    We proudly serve a unique fusion of Italian and Japanese dishes in a modern, inviting space.
+                </p>
+                <p>
+                    Our mission is to create memorable meals that bring people together—whether you dine in,
+                    order ahead for take-out, or simply stop by for a quick lunch.
+                </p>
+                <div class="hero-buttons">
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                    <a href="menulist.html" class="btn btn-secondary">View Menu</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="placeholder-image">🍽️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- assignment6 -->
+    <section class="search-section" style="padding: 2rem; text-align: center; background-color: #f9f9f9;">
+    <h3>🔍 Search Our Menu</h3>
+    <p>Type a keyword like "Chicken", "Wrap", or "Sandwich"</p>
+    
+    <div style="margin: 1rem 0;">
+        <input type="text" id="meal-keyword" placeholder="Enter keyword..." style="padding: 8px; width: 250px;">
+        <button id="search-btn" style="padding: 8px 16px; cursor: pointer;">Search Meal</button>
+    </div>
+
+    <div id="archive-results" style="margin-top: 1.5rem; text-align: left; display: inline-block; max-width: 600px;"></div>
+    
+    <div id="giphy-results" style="margin-top: 1.5rem; display: flex; gap: 10px; justify-content: center;"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h3>Why Choose Us?</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4>Fresh Ingredients</h4>
+                <p>We source the finest quality ingredients daily for authentic flavors.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🍳</div>
+                <h4>Expert Chefs</h4>
+                <p>Our experienced chefs blend traditional recipes with modern techniques.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h4>Award Winning</h4>
+                <p>Recognized for excellence in fusion cuisine and customer service.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏠</div>
+                <h4>Cozy Ambiance</h4>
+                <p>Enjoy your meal in our warm and welcoming dining space.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h3>What Our Customers Say</h3>
+        <div class="testimonials-grid">
+            <article class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"The best peri-peri chicken in town! The flavors are incredible, the staff is friendly, and the atmosphere is so cozy. Definitely coming back!"</p>
+                <p class="customer-name">— Sarah L.</p>
+            </article>
+            <article class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Love the mix of Italian pasta and Japanese spices. The fusion menu is creative and delicious. Perfect for family dinners and special occasions!"</p>
+                <p class="customer-name">— Daniel R.</p>
+            </article>
+            <article class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Exceptional food quality and presentation. The service is outstanding. This place has become my go-to for impressing guests!"</p>
+                <p class="customer-name">— Maria K.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h3>Ready to Experience Our Cuisine?</h3>
+        <p>Join us today for an unforgettable dining experience</p>
+        <div class="cta-buttons">
+            <a href="order.html" class="btn btn-primary-large">Order Online</a>
+            <a href="location.html" class="btn btn-secondary-large">Find Us</a>
+            <a href="contact.html" class="btn btn-tertiary-large">Get in Touch</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h5>About Us</h5>
+            <p>The Progress Restaurant brings Italian and Japanese cuisines together in harmony.</p>
+        </div>
+        <div class="footer-section">
+            <h5>Quick Links</h5>
+            <ul>
+                <li><a href="menulist.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="location.html">Location</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h5>Contact</h5>
+            <p>📧 info@progressrestaurant.com</p>
+            <p>📞 (555) 123-4567</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 The Progress Restaurant. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

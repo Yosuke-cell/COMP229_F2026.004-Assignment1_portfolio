@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Progress Restaurant - Order Calendar</title>
+    <link rel="stylesheet" href="calendar-style.css">
+</head>
+<body>
+<header>
+    <div class="container-header">
+        <div class="branding">
+            <h1>🍽️ THE PROGRESS RESTAURANT</h1>
+            <p>Fusion of Italian & Japanese Cuisine</p>
+        </div>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="menulist.html">MENU ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="calendar.html" class="active">Calendar</a></li>
+                        <li><a href="menulist.html">Menu List</a></li>
+                        <li><a href="order.html">Order Now</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="order.html">ESTIMATE</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="content">
+    <section class="calendar-section">
+        <h2>Order Calendar</h2>
+        <p class="subtitle">View upcoming orders and place your reservations</p>
+        
+        <div class="calendar-controls">
+            <label for="monthYear">Select Month and Year:</label>
+            <select id="monthYear">
+                <option value="2024-01">January 2024</option>
+                <option value="2024-02">February 2024</option>
+                <option value="2024-03">March 2024</option>
+                <option value="2024-04">April 2024</option>
+                <option value="2024-05">May 2024</option>
+                <option value="2024-06">June 2024</option>
+                <option value="2024-07">July 2024</option>
+                <option value="2024-08" selected>August 2024</option>
+                <option value="2024-09">September 2024</option>
+                <option value="2024-10">October 2024</option>
+                <option value="2024-11">November 2024</option>
+                <option value="2024-12">December 2024</option>
+                <option value="2025-01">January 2025</option>
+                <option value="2025-02">February 2025</option>
+                <option value="2025-03">March 2025</option>
+                <option value="2025-04">April 2025</option>
+                <option value="2025-05">May 2025</option>
+                <option value="2025-06">June 2025</option>
+                <option value="2025-07">July 2025</option>
+                <option value="2025-08">August 2025</option>
+                <option value="2025-09">September 2025</option>
+                <option value="2025-10">October 2025</option>
+                <option value="2025-11">November 2025</option>
+                <option value="2025-12">December 2025</option>
+            </select>
+        </div>
+
+        <div class="calendar-wrapper">
+            <table id="calendar">
+                <caption id="calendarCaption">August 2024</caption>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="order-section">
+        <div class="order-container">
+            <div class="form-column">
+                <h3>📝 Place Your Order</h3>
+                <form id="orderFormElement">
+                    <label for="selectedDate">Delivery Date:</label>
+                    <input type="text" id="selectedDate" name="selectedDate" readonly placeholder="Click a date on the calendar">
+                    
+                    <label for="foodItem">Food/Meal:</label>
+                    <select id="foodItem" name="foodItem" required>
+                        <option value="">-- Select a meal --</option>
+                        <option value="1/2 Chicken|19.89">1/2 Chicken - With 2 Sides - $19.89</option>
+                        <option value="1/4 Chicken Breast Wing|17.29">1/4 Chicken (Breast + Wing) - With 2 Sides - $17.29</option>
+                        <option value="1/4 Chicken Leg Thigh|14.29">1/4 Chicken (Leg + Thigh) - With 1 Side - $14.29</option>
+                        <option value="Full Chicken|34.99">Full Chicken - With 3 Sides - $34.99</option>
+                        <option value="Spicy Shrimp Pasta|18.99">Spicy Shrimp Pasta - $18.99</option>
+                        <option value="Teriyaki Ramen|16.99">Teriyaki Ramen - $16.99</option>
+                        <option value="Fusion Burger|15.99">Fusion Burger - $15.99</option>
+                    </select>
+                    
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" name="price" readonly placeholder="Price will auto-populate">
+                    
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    
+                    <label for="customerName">Customer Name:</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Your name" required>
+                    
+                    <label for="deliveryOption">Delivery/Pickup:</label>
+                    <select id="deliveryOption" name="deliveryOption" required>
+                        <option value="">-- Select option --</option>
+                        <option value="Take-away">Take-away</option>
+                        <option value="Eat-in">Eat-in</option>
+                    </select>
+                    
+                    <button type="submit" id="submitBtn">Place Order</button>
+                </form>
+            </div>
+
+            <div class="orders-column">
+                <h3>📋 Orders by Date</h3>
+                <div id="ordersDisplay">
+                    <p class="no-orders">No orders yet. Click a calendar date to view or place an order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h5>About Us</h5>
+            <p>The Progress Restaurant offers a unique fusion of Italian and Japanese cuisine with exceptional service and quality ingredients.</p>
+        </div>
+        <div class="footer-section">
+            <h5>Quick Links</h5>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menulist.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h5>Contact Info</h5>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@progress.com</p>
+            <p>Hours: 11AM - 10PM Daily</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 The Progress Restaurant. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="calendar.js"></script>
+</body>
+</html>

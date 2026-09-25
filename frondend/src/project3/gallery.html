@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 3 - Menu Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery {display:flex;flex-wrap:wrap;gap:16px;}
+        .thumb {width:180px;cursor:pointer;border:1px solid #ddd;padding:6px;border-radius:6px;background:#fff}
+        .thumb img{width:100%;height:auto;display:block}
+        .favorites {margin-top:32px;border-top:2px dashed #ddd;padding-top:16px}
+        .favorite-item{display:inline-block;margin:6px;padding:6px;border:1px solid #ccc;border-radius:6px;background:#fafafa}
+        .favorite-item img{width:100px;height:auto;display:block}
+        .fav-actions{display:flex;gap:6px;align-items:center}
+        .message{color:#d00;margin-top:8px}
+    </style>
+</head>
+<body>
+<header>
+    <div class="container-header">
+        <div class="branding">
+            <h1>🍽️ THE PROGRESS RESTAURANT - Gallery</h1>
+        </div>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="menulist.html">MENU ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="menulist.html">Menu List</a></li>
+                        <li><a href="order.html">Order Now</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="order.html">ESTIMATE</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="content">
+    <section>
+        <h2>Menu Gallery</h2>
+        <p>Click any picture to open a zoomed view and add it to your favorites.</p>
+
+        <div class="gallery" id="gallery">
+            <!-- Thumbnails: replace URLs with your own images if desired -->
+            <div class="thumb" data-src="https://source.unsplash.com/featured/?pizza" title="Pizza">
+                <img src="https://source.unsplash.com/300x200/?pizza" alt="Pizza">
+                <div class="caption">Pizza</div>
+            </div>
+            <div class="thumb" data-src="https://source.unsplash.com/featured/?sushi" title="Sushi">
+                <img src="https://source.unsplash.com/300x200/?sushi" alt="Sushi">
+                <div class="caption">Sushi</div>
+            </div>
+            <div class="thumb" data-src="https://source.unsplash.com/featured/?pasta" title="Pasta">
+                <img src="https://source.unsplash.com/300x200/?pasta" alt="Pasta">
+                <div class="caption">Pasta</div>
+            </div>
+            <div class="thumb" data-src="https://source.unsplash.com/featured/?burger" title="Burger">
+                <img src="https://source.unsplash.com/300x200/?burger" alt="Burger">
+                <div class="caption">Burger</div>
+            </div>
+            <div class="thumb" data-src="https://source.unsplash.com/featured/?salad" title="Salad">
+                <img src="https://source.unsplash.com/300x200/?salad" alt="Salad">
+                <div class="caption">Salad</div>
+            </div>
+        </div>
+
+        <div class="favorites" id="favorites-area">
+            <h3>Your Favorites</h3>
+            <div id="favorites"></div>
+            <div class="message" id="favMessage" aria-live="polite"></div>
+        </div>
+    </section>
+    <p style="margin-top:20px;font-size:0.9rem;color:#666">Design: title, picture, copyright line, and simple styling for clarity.</p>
+</main>
+
+<script src="gallery.js"></script>
+</body>
+</html>

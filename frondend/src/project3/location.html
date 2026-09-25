@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Progress Restaurant - Location</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            background: #f5f2ee;
+        }
+
+        .location-page {
+            padding: 40px 20px 60px;
+        }
+
+        .location-hero {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 60px 20px;
+            border-radius: 12px;
+            color: #ffffff;
+            
+          
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('restaurant.jpg') center/cover no-repeat;
+        }
+        .location-hero h2 {
+            font-size: 2.5rem;
+            color: rgb(184, 217, 198);
+            margin-bottom: 12px;
+        }
+
+        .location-hero p {
+            font-size: 1.08rem;
+            color: rgb(200, 231, 211);
+        }
+
+        .location-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 28px;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .map-card,
+        .info-panel {
+            background: #fff;
+            border: 1px solid #d9d1c5;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+
+        .map-card {
+            overflow: hidden;
+        }
+
+        .route-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 18px 16px 14px;
+            background: #f3efe9;
+            border-bottom: 1px solid #d9d1c5;
+        }
+
+        .route-buttons button {
+            border: 1px solid #c7c7c7;
+            background: #fff;
+            color: #333;
+            border-radius: 6px;
+            padding: 9px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .route-buttons button:hover,
+        .route-buttons button.active {
+            background: #ff7f50;
+            border-color: #ff7f50;
+            color: #fff;
+        }
+
+        #map {
+            width: 100%;
+            height: 440px;
+            border: 0;
+            display: block;
+        }
+
+        #routeInfo {
+            margin: 0;
+            padding: 16px 18px 18px;
+            background: #fffaf7;
+            color: #3b3b3b;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            border-top: 1px solid #eee3d6;
+        }
+
+        .info-panel {
+            padding: 26px 22px;
+        }
+
+        .info-panel h3 {
+            color: #1a472a;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .info-panel p,
+        .info-panel li {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 18px 0;
+        }
+
+        .info-list li {
+            margin-bottom: 8px;
+        }
+
+        .info-panel .btn {
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .location-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container-header">
+        <div class="branding">
+            <h1>🍽️ THE PROGRESS RESTAURANT</h1>
+            <p>Fusion of Italian &amp; Japanese Cuisine</p>
+        </div>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="menulist.html">MENU ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="menulist.html">Menu List</a></li>
+                        <li><a href="order.html">Order Now</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="order.html">ESTIMATE</a></li>
+                <li><a href="location.html" class="active">LOCATION</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="sitemap.html">SITE MAP</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="content location-page">
+    <section class="location-hero">
+        <h2>Find Us</h2>
+        <p>Visit The Progress Restaurant near Centennial College Progress Campus in Toronto.</p>
+    </section>
+
+    <section class="location-layout">
+        <div class="map-card">
+            <div class="route-buttons">
+            <button class="mode-btn active" data-mode="DRIVING" type="button">Driving</button>
+            <button class="mode-btn" data-mode="WALKING" type="button">Walking</button>
+            <button class="mode-btn" data-mode="TRANSIT" type="button">Rail / Train (Transit)</button>
+            </div>
+
+            <div id="map"></div>
+
+            <p id="routeInfo">Driving route: 6.3 km, about 12 minutes from downtown Toronto.</p>
+        </div>
+
+        <aside class="info-panel">
+            <h3>Restaurant Address</h3>
+            <p><strong>The Progress Restaurant</strong><br>
+            123 Progress Avenue<br>
+            Toronto, ON, Canada</p>
+
+            <ul class="info-list">
+                <li>📍 Near Centennial College Progress Campus</li>
+                <li>📞 (416) 555-1234</li>
+                <li>🕒 Mon-Sun: 10:30 AM - 10:00 PM</li>
+            </ul>
+
+            <a href="location.html" class="btn btn-primary">Open Main Location Page</a>
+        </aside>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h5>About Us</h5>
+            <p>The Progress Restaurant brings Italian and Japanese cuisines together in harmony.</p>
+        </div>
+        <div class="footer-section">
+            <h5>Quick Links</h5>
+            <ul>
+                <li><a href="menulist.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="location.html">Location</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h5>Contact</h5>
+            <p>📧 info@progressrestaurant.com</p>
+            <p>📞 (555) 123-4567</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 The Progress Restaurant. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPyyJRfgq9mtVlxOxM3dxKKxi55T6PYXo&callback=initMap" async defer></script>
+<script src="location.js"></script>
+</body>
+</html>

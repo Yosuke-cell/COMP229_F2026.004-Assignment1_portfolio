@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment3</title>
+    <style>
+    body{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: gray;
+    }
+    .container{
+        max-width: 1200px;
+        margin: auto auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px 0 black;
+        padding: 10px;
+    }
+    h1, h4{
+        display: inline-block;
+    }
+    h1 img{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    h4{
+        margin-left: 600px;
+    }
+    img{
+        width: 450px;
+        height: 400px;
+    }
+    a:hover{
+        box-shadow: 0 0 15px 0 black;
+    }
+    main{
+        margin: auto auto;
+    }
+    .content{
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 20px;
+        margin: auto auto;
+        box-shadow: 0 0 15px 0;
+        border-radius: 10px;
+    }
+    table{
+        width: 100%;
+        padding: 20px;
+        border-collapse: collapse;
+        margin: 20px auto;
+        box-shadow: 0 0 15px 0 black;
+    }
+    th{
+        text-align: left;
+        border: 1px solid black;
+        padding: 10px;
+        background-color: #2f2f2f;
+        color: white;
+    }
+    td{
+        border: 1px solid black;
+        text-align: left;
+        height: 30px;
+        padding: 5px 20px;
+    }
+    .model1{
+        background-color: rgb(225, 223, 223);
+    }
+    .model2{
+        background-color: rgb(193, 192, 192);
+    }
+    .model3{
+        background-color: rgb(225, 223, 223);
+    }
+    .model4{
+        background-color: rgb(193, 192, 192);
+    }
+    .map{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+    .map img{
+        width: 660px;
+        height: 493px;
+        display: block;
+    }
+    h2{
+        margin: 0 auto;
+    }
+    h5{
+        text-align: center;
+    }
+    </style>
+</head>
+<!-- Yosuke Nakamura 301526834-->
+<body>
+    <div class="container">
+    <h1><a href="https://www.apple.com" title="visit apple"><img src="applelogo.png" alt="apple logo"></a>Airpods 4</h1>
+    <div class="content">
+    <a href="detail.html"><img src="airpods4.jpg" alt="airpods" title="Click on to see larger image"></a>
+    <main>
+    <h2>Apple Airpods4</h2>
+    <p>The AirPods 4 represent Apple’s newest generation of wireless earbuds,
+        arriving in two versions: a standard model and a model with Active Noise Cancellation (ANC).
+        Both versions introduce meaningful upgrades in sound quality, comfort, and smart features, 
+        making them a strong step forward from previous generations.
+    </p>
+    <nav>
+        <ul>
+            <li>Open-ear design</li>
+            <li>Comfortable long-term wear</li>
+            <li>Adaptive EQ</li>
+            <li>Noise Control</li>
+            <li>Call clarity</li>
+            <li>Total 30 hours with the cahrging case</li>
+        </ul>
+    </nav>
+    </main>
+    </div>
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr class="model1">
+            <td>Model Airpod(1nd generation)</td>
+            <td>$112CAN</td>
+        </tr>
+        <tr class="model2">
+            <td>Model Airpod(2nd generation)</td>
+            <td>$154CAN</td>
+        </tr>
+        <tr class="model3">
+            <td>Model Airpod(3nd generation)</td>
+            <td>$158CAN</td>
+        </tr>
+        <tr class="model4">
+            <td>Model Airpod(4nd generation and standard)</td>
+            <td>$179CAN</td>
+        </tr>
+    </table>
+    <h2>Hotspot of Canada</h2>
+    <div class="map">
+        <img src="map.svg" alt="canadamap" usemap="#canadamap">
+    </div>
+    <map name="canadamap">
+    <!-- British Columbia (West) -->
+    <area 
+        shape="circle"
+        coords="132,310,50"
+        href="https://www.apple.com/ca/retail/"
+        alt="British Columbia"
+        title="BC Distributor">
+
+    <!-- Ontario (Central) -->
+    <area 
+        shape="circle"
+        coords="363,350,50"
+        href="https://www.apple.com/ca/retail/"
+        alt="Ontario"
+        title="Ontario Distributor">
+
+    <!-- Quebec (East) -->
+    <area 
+        shape="circle"
+        coords="462,350,50"
+        href="https://www.apple.com/ca/retail/"
+        alt="Quebec"
+        title="Quebec Distributor">
+</map>
+<h5>&copy;&nbsp;&nbsp;Copyright - Yosuke Nakamura 301526834 - W26</h5>
+    </div>
+</body>
+</html>

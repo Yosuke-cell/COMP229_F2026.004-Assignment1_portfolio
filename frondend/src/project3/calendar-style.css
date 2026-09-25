@@ -1,0 +1,577 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+    padding: 20px 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.branding {
+    margin-bottom: 15px;
+}
+
+.branding h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    color: #fefaf3;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.branding p {
+    font-size: 1rem;
+    color: #d4e9e0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    width: 100%;
+}
+
+.nav-bar {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.nav-bar li {
+    position: relative;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.nav-bar a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.nav-bar a.active {
+    background-color: #ff7f50;
+    color: #fff;
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f0f0f0;
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ===== MAIN CONTENT ===== */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== CALENDAR SECTION ===== */
+.calendar-section {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    margin: 40px 0;
+}
+
+.calendar-section h2 {
+    font-size: 2.2rem;
+    color: #1a472a;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #2d6a4f;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.calendar-controls label {
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+.calendar-controls select {
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    min-width: 250px;
+    transition: border 0.3s ease;
+}
+
+.calendar-controls select:focus {
+    outline: none;
+    border-color: #ff7f50;
+    box-shadow: 0 0 8px rgba(255, 127, 80, 0.2);
+}
+
+.calendar-wrapper {
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+/* Calendar Table */
+#calendar {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#calendar caption {
+    padding: 16px;
+    background-color: #2d6a4f;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+#calendar th {
+    padding: 16px;
+    text-align: center;
+    font-weight: 700;
+    background-color: #1a472a;
+    color: #fff;
+    border: none;
+}
+
+#calendar td {
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #eee;
+    height: 100px;
+    cursor: pointer;
+    background-color: #ffffff;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+#calendar td.otherMonth {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: default;
+}
+
+#calendar td.currentMonth:hover {
+    background-color: #f0f0f0;
+    font-weight: 600;
+    box-shadow: inset 0 0 0 2px #ff7f50;
+}
+
+#calendar td.selectedDate {
+    background-color: #e8f5e9;
+    font-weight: 700;
+    box-shadow: inset 0 0 0 3px #4caf50;
+}
+
+#calendar td.hasOrders::after {
+    content: "●";
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    color: #ff7f50;
+    font-size: 16px;
+}
+
+/* ===== ORDER SECTION ===== */
+.order-section {
+    margin: 40px 0;
+}
+
+.order-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-column,
+.orders-column {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-column h3,
+.orders-column h3 {
+    font-size: 1.4rem;
+    color: #1a472a;
+    margin-bottom: 20px;
+    font-weight: 700;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ff7f50;
+}
+
+/* ===== FORMS ===== */
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+    font-family: inherit;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #ff7f50;
+    box-shadow: 0 0 8px rgba(255, 127, 80, 0.2);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#submitBtn {
+    background-color: #ff7f50;
+    color: #ffffff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 127, 80, 0.2);
+    width: 100%;
+    font-size: 1rem;
+}
+
+#submitBtn:hover {
+    background-color: #e7683c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 127, 80, 0.3);
+}
+
+/* ===== ORDERS DISPLAY ===== */
+#ordersDisplay {
+    min-height: 200px;
+}
+
+.date-header {
+    background-color: #ff7f50;
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-item {
+    background: #f9f9f9;
+    padding: 16px;
+    border-left: 5px solid #ff7f50;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 12px;
+}
+
+.order-number {
+    background-color: #ff7f50;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.order-details {
+    flex: 1;
+}
+
+.order-details p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.no-orders {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-style: italic;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 2px dashed #ddd;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+    color: #d4e9e0;
+    padding: 50px 40px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.footer-section h5 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.footer-section p {
+    color: #d4e9e0;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #d4e9e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #fefaf3;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #d4e9e0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .branding h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav-bar {
+        gap: 3px;
+    }
+
+    .nav-bar a {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    .content {
+        padding: 0 10px;
+    }
+
+    .calendar-section {
+        padding: 20px;
+    }
+
+    .calendar-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .calendar-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .calendar-controls select {
+        min-width: 100%;
+    }
+
+    #calendar td {
+        padding: 10px;
+        height: 80px;
+        font-size: 0.9rem;
+    }
+
+    .order-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-column,
+    .orders-column {
+        padding: 20px;
+    }
+
+    .order-item {
+        flex-direction: column;
+    }
+
+    .order-number {
+        align-self: flex-start;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .branding h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .branding p {
+        font-size: 0.85rem;
+    }
+
+    .calendar-section {
+        padding: 15px;
+    }
+
+    .calendar-section h2 {
+        font-size: 1.4rem;
+    }
+
+    #calendar th {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    #calendar td {
+        padding: 8px;
+        height: 70px;
+        font-size: 0.8rem;
+    }
+
+    .form-column,
+    .orders-column {
+        padding: 15px;
+    }
+
+    .form-column h3,
+    .orders-column h3 {
+        font-size: 1.2rem;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form input[type="number"],
+    form textarea,
+    form select {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}
