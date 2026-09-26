@@ -18,8 +18,17 @@ body{
     box-sizing: border-box;
 }
 #nav-title{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: bold;
+}
+#nav-logo{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 #nav ul{
     display: flex;
