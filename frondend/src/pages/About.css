@@ -1,0 +1,51 @@
+#about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 80%;
+    min-height: 80vh;
+    margin: auto;
+    padding: 2rem;
+}
+#about-text{
+    flex: 1;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(70px);
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 2px white;
+}
+#resume{
+    margin-top: 10px;
+    text-align: center;
+}
+#resume h4{
+    margin: 0;
+}
+#resume a{
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+#resume a:hover{
+    background-color: white;
+    color: rgb(0, 36, 115);
+}
+#about img{
+    max-width: 300px;
+    width: 40%;
+    height: 350px;
+    object-fit: cover;
+    order: -1;
+    transform: translateX(40px);
+    box-shadow: 2px 2px 6px 2px white;
+}

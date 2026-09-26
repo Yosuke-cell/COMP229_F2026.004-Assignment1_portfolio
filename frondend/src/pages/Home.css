@@ -1,12 +1,14 @@
-html{
-    margin: 0;
+#home{
+    padding: 20px 8px 10px;
 }
-body{
-    min-height: 100vh;
-    background: linear-gradient(180deg, rgb(0, 4, 13), rgb(0, 36, 115));
-    font-family: Arial, sans-serif;
-    margin-block: 20px 10px;
-    color: white;
+#thank-you{
+    width: 79%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
 }
 #header{
     display: flex;
@@ -22,9 +24,9 @@ body{
     border: 2px solid white;
     box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
 }
-h1{
+#header h1{
     margin: 0;
-    text-align: center;
+    font-size: 2em;
 }
 @media (max-width: 600px){
     #header{
@@ -32,7 +34,7 @@ h1{
         gap: 10px;
     }
 }
-#nav{
+#home-nav{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 80%;
@@ -43,14 +45,14 @@ h1{
     row-gap: 20px;
     column-gap: 40px;
 }
-#nav li{
+#home-nav li{
     height: 100px;
     border: 1.5px solid rgb(255, 255, 255);
     border-radius: 8px;
     box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
     font-size: 20px;
 }
-#nav li a{
+#home-nav li a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,13 +62,13 @@ h1{
     color: white;
     transition: color 0.2s, font-size 0.2s;
 }
-#nav li a:hover{
+#home-nav li a:hover{
     background-color: rgba(255, 255, 255, 0.429);
     border-radius: 8px;
     font-size: 30px;
     color: white;
 }
-h3{
+#mission h3{
     margin: 10px;
     font-size: 30px;
 }

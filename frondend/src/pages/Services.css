@@ -1,0 +1,35 @@
+#services{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+#services .box p{
+    flex-grow: 1;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+#services-contact{
+    margin: 0 auto 60px;
+    text-align: center;
+}
+.services-button{
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.services-button:hover{
+    background-color: white;
+    color: rgb(0, 36, 115);
+}
+@media (max-width: 900px){
+    #services{
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,108 @@
+/* Info panel and form sit side by side on wide screens */
+#contact-page{
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+#contact-info, #contact-form{
+    padding: 30px;
+    border: 1.5px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+}
+#contact-info{
+    flex: 1;
+}
+#contact-info h3{
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+}
+#contact-info p{
+    margin: 10px 0;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    overflow-wrap: anywhere;
+}
+#contact-info a{
+    color: white;
+}
+#contact-form{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+.name-row{
+    display: flex;
+    gap: 15px;
+}
+.field{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+#contact-form label{
+    margin: 15px 0 6px;
+    font-weight: bold;
+}
+#contact-form .name-row label{
+    margin-top: 0;
+}
+#contact-form input, #contact-form textarea{
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+}
+#contact-form input::placeholder, #contact-form textarea::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+#contact-form input:focus, #contact-form textarea:focus{
+    outline: none;
+    border-color: white;
+    background: rgba(255, 255, 255, 0.15);
+}
+#contact-form textarea{
+    resize: vertical;
+}
+.contact-button{
+    margin-top: 25px;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background: transparent;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.contact-button:hover{
+    background-color: white;
+    color: rgb(0, 36, 115);
+}
+.form-error{
+    margin: 15px 0 0;
+    text-align: center;
+    color: #ff9b9b;
+}
+@media (max-width: 900px){
+    #contact-page{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .name-row{
+        flex-direction: column;
+        gap: 0;
+    }
+    #contact-form .name-row .field + .field label{
+        margin-top: 15px;
+    }
+}
