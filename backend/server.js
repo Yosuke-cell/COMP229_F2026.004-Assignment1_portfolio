@@ -5,7 +5,7 @@ let http = require('http');
 let debug = require('debug')('comp229:server');
 
 //provide the port number
-var port = normalisePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 //connect with database
