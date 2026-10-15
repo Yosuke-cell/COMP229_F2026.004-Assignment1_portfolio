@@ -1,5 +1,5 @@
 //import those files
-let cinfigDB = require('./config/db');
+let configDB = require('./config/db');
 let app = require('./config/express');
 let http = require('http');
 let debug = require('debug')('comp229:server');
@@ -13,7 +13,7 @@ configDB();
 
 var server = http.createServer(app);
 server.listen(port);
-server.on('error', onError);
+server.on('error', OnError);
 server.on('listening', onListening);
 
 
