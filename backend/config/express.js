@@ -4,6 +4,7 @@ var logger = require('morgan');
 var cors = require('cors');
 
 //import routers
+let indexRouter = require('../app/routers/index');
 let projectsRouter = require('../app/routers/projects');
 
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 //routers
+app.use('/', indexRouter);
 app.use('/api/projects', projectsRouter);
 
 
