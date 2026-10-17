@@ -20,7 +20,7 @@ module.exports.processAdd = async function(req, res, next){
     }
 };
 
-//post /api/projects
+//get /api/projects
 module.exports.projectsList = async function(req, res, next){
     try{
         let list = await ProjectsModel.find({});
@@ -45,7 +45,7 @@ module.exports.getByID = async function(req, res, next){
         res.json(
             {
                 success: true,
-                message: "Project added successfully.",
+                message: "Project get by id successfully.",
                 data: project
             }
         );
