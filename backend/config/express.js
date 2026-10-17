@@ -7,6 +7,7 @@ var cors = require('cors');
 let indexRouter = require('../app/routers/index');
 let projectsRouter = require('../app/routers/projects');
 let referenceRouter = require('../app/routers/referemce');
+let servicesRouter = require('../app/routers/services');
 
 
 //config express
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/api/projects', projectsRouter);
 app.use('/api/references', referenceRouter);
+app.use('/api/services', servicesRouter);
 
 
 //catch 404 and forward to error handler
