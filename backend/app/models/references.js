@@ -15,7 +15,7 @@ let referencesModel = mongoose.Schema(
 referencesModel.set('toJSON', {
     virtuals: true,
     versionKey: false,
-    transform: function(dot, ret){
+    transform: function(doc, ret){
         delete ret._id
     }
 });

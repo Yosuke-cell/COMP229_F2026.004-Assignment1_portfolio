@@ -6,8 +6,9 @@ var cors = require('cors');
 //import routers
 let indexRouter = require('../app/routers/index');
 let projectsRouter = require('../app/routers/projects');
-let referenceRouter = require('../app/routers/referemce');
+let referenceRouter = require('../app/routers/reference');
 let servicesRouter = require('../app/routers/services');
+let usersRouter = require('../app/routers/users');
 
 
 //config express
@@ -23,6 +24,7 @@ app.use('/', indexRouter);
 app.use('/api/projects', projectsRouter);
 app.use('/api/references', referenceRouter);
 app.use('/api/services', servicesRouter);
+app.use('/api/users', usersRouter);
 
 
 //catch 404 and forward to error handler
@@ -35,7 +37,7 @@ app.use(function (err, req, res, next) {
     //reader the error json
     res.status(err.status || 500);
     res.json({
-        sucess: false,
+        success: false,
         message: err.message
     });
 });
