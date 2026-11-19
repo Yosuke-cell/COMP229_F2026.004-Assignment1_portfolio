@@ -1,18 +1,11 @@
-/* Info panel and form sit side by side on wide screens */
+/* Contact.css - info panel and form, side by side on wide screens */
 #contact-page{
     display: flex;
     gap: 30px;
     align-items: flex-start;
-    width: 85%;
-    max-width: 1000px;
-    margin: 0 auto 60px;
 }
 #contact-info, #contact-form{
     padding: 30px;
-    border: 1.5px solid rgb(255, 255, 255);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
 }
 #contact-info{
@@ -24,8 +17,6 @@
 }
 #contact-info p{
     margin: 10px 0;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
     overflow-wrap: anywhere;
 }
 #contact-info a{
@@ -77,22 +68,16 @@
     margin-top: 25px;
     padding: 10px;
     font-size: 1rem;
-    color: white;
     background: transparent;
-    border: 1.5px solid white;
-    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-}
-.contact-button:hover{
-    background-color: white;
-    color: rgb(0, 36, 115);
 }
 .form-error{
     margin: 15px 0 0;
     text-align: center;
     color: #ff9b9b;
 }
+
+/* Small screens: info panel above the form */
 @media (max-width: 900px){
     #contact-page{
         flex-direction: column;

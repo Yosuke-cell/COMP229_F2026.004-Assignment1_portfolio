@@ -1,11 +1,34 @@
-/* Global styles: these apply to every page */
+/* =========================================================
+   index.css - styles SHARED by the whole site.
+   main.jsx imports this file once. Each page / component also
+   imports its own CSS file (Home.css, Nav.css, Contact.css ...)
+   for the styles that only it uses.
+
+   Contents:
+     1. Colors and shared values (variables)
+     2. Global (body, headings, intro text)
+     3. Shared pieces (page width, panels, text, buttons, grids)
+     4. Small screens
+   ========================================================= */
+
+
+/* ---------- 1. Colors and shared values ---------- */
+:root{
+    --navy: rgb(0, 36, 115);
+    --line: 1.5px solid white;                         /* white border */
+    --shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);    /* soft white glow */
+    --panel-bg: rgba(255, 255, 255, 0.05);             /* see-through panel */
+    --hover-bg: rgba(255, 255, 255, 0.12);             /* a bit brighter */
+    --text-dim: rgba(255, 255, 255, 0.85);             /* body text */
+}
+
+
+/* ---------- 2. Global ---------- */
 body{
-    background: linear-gradient(180deg, rgb(0, 4, 13), rgb(0, 36, 115));
+    background: linear-gradient(180deg, rgb(0, 4, 13), var(--navy));
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
     min-height: 100vh;
-    max-width: 100%;
     color: white;
 }
 h1{
@@ -19,28 +42,94 @@ h1{
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* Box cards used on the Services and References pages */
-.box{
+
+/* ---------- 3. Shared pieces ---------- */
+
+/* Page width: every main section is centered and 85% wide */
+#projects, #references, #services, .list-page, #contact-page, #error-page{
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+#projects, #references{ max-width: 1200px; }
+#error-page{ max-width: 600px; }
+#services{ margin-bottom: 50px; }
+
+/* Panels: cards, boxes, contact panels and the table share the same look */
+.box, .card, #contact-info, #contact-form, .list-table{
+    border: var(--line);
+    background: var(--panel-bg);
+    box-shadow: var(--shadow);
+}
+.box, .card, #contact-info, #contact-form{
+    border-radius: 8px;
+}
+
+/* Cards: .card is used on Projects, .box on Services and References */
+.box, .card{
     display: flex;
     flex-direction: column;
     padding: 25px;
-    border: 1.5px solid rgb(255, 255, 255);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
     transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
-.box:hover{
+.box:hover, .card:hover{
     transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--hover-bg);
     box-shadow: 4px 8px 16px rgba(255, 255, 255, 0.4);
 }
-.box-number{
+.box-number, .card-number{
     font-size: 2rem;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.35);
 }
-.box h3{
+.box h3, .card h3{
     margin: 10px 0;
     font-size: 1.5rem;
+}
+
+/* Paragraph text inside panels */
+#error-page p, .card p, #services .box p, #references .box p, #contact-info p{
+    line-height: 1.5;
+    color: var(--text-dim);
+}
+
+/* Round logos (nav and home page) */
+#nav-logo, #logo{
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* White outline buttons: same look on every page, they turn white when you hover */
+.error-button, #resume a, .card-button, .services-button, .contact-button, .list-add{
+    color: white;
+    text-decoration: none;
+    border: var(--line);
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.error-button:hover, #resume a:hover, .card-button:hover,
+.services-button:hover, .contact-button:hover, .list-add:hover{
+    background-color: white;
+    color: var(--navy);
+}
+/* Small buttons that sit in the middle of a line */
+.error-button, #resume a, .services-button, .list-add{
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+/* 3-column card grids on Projects and References */
+#projects, #references{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* ---------- 4. Small screens ---------- */
+@media (max-width: 900px){
+    /* Card grids become one column */
+    #projects, #references{
+        grid-template-columns: 1fr;
+    }
 }

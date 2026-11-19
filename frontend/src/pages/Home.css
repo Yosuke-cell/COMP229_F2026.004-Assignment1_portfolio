@@ -1,3 +1,4 @@
+/* Home.css - welcome message, page buttons, and mission statement */
 #home{
     padding: 20px 8px 10px;
 }
@@ -6,9 +7,9 @@
     margin: 0 auto;
     padding: 12px;
     text-align: center;
-    border: 1.5px solid white;
+    border: var(--line);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--hover-bg);
 }
 #header{
     display: flex;
@@ -20,36 +21,26 @@
 #logo{
     width: 90px;
     height: 90px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow);
 }
 #header h1{
     margin: 0;
     font-size: 2em;
 }
-@media (max-width: 600px){
-    #header{
-        flex-direction: column;
-        gap: 10px;
-    }
-}
 #home-nav{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px 40px;
     width: 80%;
-    list-style: none;
+    margin: 30px auto 0;
     padding: 0;
-    margin: 0 auto;
-    margin-top: 30px;
-    row-gap: 20px;
-    column-gap: 40px;
+    list-style: none;
 }
 #home-nav li{
     height: 100px;
-    border: 1.5px solid rgb(255, 255, 255);
+    border: var(--line);
     border-radius: 8px;
-    box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow);
     font-size: 20px;
 }
 #home-nav li a{
@@ -66,18 +57,24 @@
     background-color: rgba(255, 255, 255, 0.429);
     border-radius: 8px;
     font-size: 30px;
-    color: white;
+}
+#mission{
+    width: 79%;
+    margin: 10px auto 0;
+    padding: 8px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px white;
 }
 #mission h3{
     margin: 10px;
     font-size: 30px;
 }
-#mission{
-    margin: auto;
-    margin-top: 10px;
-    padding: 8px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 2px 2px 6px rgb(255, 255, 255);
-    width: 79%;
+
+/* Small screens: logo above the title */
+@media (max-width: 600px){
+    #header{
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -1,9 +1,8 @@
+/* Nav.css - the navigation bar at the top of every page (except Home) */
 #nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    margin: 0;
     padding: 1rem 2rem;
     background: #17212e;
     box-sizing: border-box;
@@ -18,8 +17,6 @@
 #nav-logo{
     width: 45px;
     height: 45px;
-    border-radius: 50%;
-    border: 2px solid white;
 }
 #nav ul{
     display: flex;
@@ -36,6 +33,8 @@
 #nav a:hover{
     text-decoration: underline;
 }
+
+/* Small screens: title on top, links wrap underneath */
 @media (max-width: 900px){
     #nav{
         flex-direction: column;

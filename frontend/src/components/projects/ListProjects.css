@@ -1,0 +1,51 @@
+/* ListProjects.css - the table of projects from the database */
+.list-add{
+    margin-bottom: 20px;
+}
+/* lets the table scroll sideways on a phone instead of squashing */
+.list-table-wrap{
+    overflow-x: auto;
+}
+.list-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.list-table th,
+.list-table td{
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.list-table th{
+    background: var(--hover-bg);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.list-table td{
+    color: var(--text-dim);
+}
+.list-table tbody tr:hover{
+    background: rgba(255, 255, 255, 0.08);
+}
+/* Edit (blue) and Delete (red) buttons in each row */
+.list-btn{
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1.5px solid;
+    background: transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.list-btn.edit{
+    color: rgb(140, 190, 255);
+    border-color: rgb(140, 190, 255);
+}
+.list-btn.delete{
+    color: rgb(255, 130, 130);
+    border-color: rgb(255, 130, 130);
+}
+.list-btn:hover{
+    background: var(--hover-bg);
+}

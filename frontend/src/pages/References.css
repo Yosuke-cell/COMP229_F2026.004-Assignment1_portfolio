@@ -1,15 +1,6 @@
-#references{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto 60px;
-}
+/* References.css - reference cards (the card look and 3-column grid are in index.css) */
 #references .box p{
     margin: 5px 0;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
     overflow-wrap: anywhere;
 }
 #references .box p a{
@@ -26,9 +17,4 @@
     padding-left: 12px;
     border-left: 3px solid rgba(255, 255, 255, 0.5);
     line-height: 1.5;
-}
-@media (max-width: 900px){
-    #references{
-        grid-template-columns: 1fr;
-    }
 }
