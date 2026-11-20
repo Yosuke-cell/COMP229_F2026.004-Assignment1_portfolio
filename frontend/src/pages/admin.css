@@ -1,0 +1,35 @@
+/* AdminDashboard.css - 2 x 2 grid of admin cards */
+#admin{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 85%;
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+.admin-links{
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+.admin-button{
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: var(--line);
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.admin-button:hover{
+    background-color: white;
+    color: var(--navy);
+}
+
+/* Small screens: one column */
+@media (max-width: 900px){
+    #admin{
+        grid-template-columns: 1fr;
+    }
+}

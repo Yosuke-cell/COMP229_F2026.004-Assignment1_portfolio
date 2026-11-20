@@ -17,6 +17,8 @@
 #nav-logo{
     width: 45px;
     height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 #nav ul{
     display: flex;

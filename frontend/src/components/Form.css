@@ -1,0 +1,99 @@
+/* Form.css - shared Add / Edit form for every section (projects, services, references, users).
+   Looks like the Contact page form so the whole site matches. */
+
+/* Centered area under the page title */
+.form-page{
+    width: 85%;
+    max-width: 600px;
+    margin: 0 auto 60px;
+}
+
+/* The panel around the form */
+.form-card{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: var(--line);
+    border-radius: 8px;
+    background: var(--panel-bg);
+    box-shadow: var(--shadow);
+}
+
+/* One label + one input */
+.form-field{
+    display: flex;
+    flex-direction: column;
+}
+.form-field label{
+    margin: 15px 0 6px;
+    font-weight: bold;
+}
+.form-field:first-child label{
+    margin-top: 0;
+}
+
+/* Text boxes, date picker, and text area */
+.form-input{
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    color-scheme: dark;     /* makes the calendar icon of the date box visible on the dark background */
+}
+.form-input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+.form-input:focus{
+    outline: none;
+    border-color: white;
+    background: rgba(255, 255, 255, 0.15);
+}
+textarea.form-input{
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Error message from the backend (hidden when empty) */
+.form-error{
+    margin: 0 0 15px;
+    text-align: center;
+    color: #ff9b9b;
+}
+.form-error:empty{
+    display: none;
+}
+
+/* Submit and Cancel side by side */
+.form-buttons{
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+.form-btn{
+    flex: 1;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: white;
+    background: transparent;
+    border: var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.form-btn:hover{
+    background: white;
+    color: var(--navy);
+}
+/* Submit is filled in so it stands out more than Cancel */
+.form-btn.primary{
+    background: white;
+    color: var(--navy);
+    font-weight: bold;
+}
+.form-btn.primary:hover{
+    background: rgba(255, 255, 255, 0.8);
+}

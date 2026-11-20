@@ -1,8 +1,8 @@
-/* ListProjects.css - the table of projects from the database */
+/* List.css - shared list page (table + Edit / Delete buttons) for every section. */
 .list-add{
     margin-bottom: 20px;
 }
-/* lets the table scroll sideways on a phone instead of squashing */
+
 .list-table-wrap{
     overflow-x: auto;
 }
@@ -24,19 +24,50 @@
 }
 .list-table td{
     color: var(--text-dim);
+    line-height: 1.5;
+    vertical-align: top;
+}
+.list-table tbody tr:last-child td{
+    border-bottom: none;
+}
+
+.list-table .list-title{
+    color: white;
+    font-weight: bold;
+}
+.list-table .list-date{
+    white-space: nowrap;
+}
+.list-table .list-actions{
+    text-align: center;
+    white-space: nowrap;
+}
+.list-actions .list-btn + .list-btn{
+    margin-left: 8px;
+}
+
+.list-message{
+    padding: 30px;
+    text-align: center;
+    color: var(--text-dim);
+    border: var(--line);
+    border-radius: 8px;
+    background: var(--panel-bg);
 }
 .list-table tbody tr:hover{
     background: rgba(255, 255, 255, 0.08);
 }
-/* Edit (blue) and Delete (red) buttons in each row */
+
 .list-btn{
     padding: 6px 14px;
     border-radius: 6px;
     border: 1.5px solid;
     background: transparent;
     font-size: 0.9rem;
+    font-family: inherit;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 0.2s;
 }
 .list-btn.edit{
     color: rgb(140, 190, 255);

@@ -12,10 +12,56 @@ const list = async () => {
   }
 };
 
+//read one project
+const read = async (id) => {
+  try {
+    let response = await fetch(apiURL + "/api/projects/" + id);
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//add function
+const create = async (project) => {
+  // Add a new project
+  try {
+    let response = await fetch(apiURL + "/api/projects", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(project),
+    });
+
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//update function
+const update = async (id, project) => {
+  try {
+    let response = await fetch(apiURL + "/api/projects/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(project),
+    });
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 //delete function
 const remove = async (id) => {
   try {
-    let res = await fetch(apiURL + "/api/projects" + id, {
+    let res = await fetch(apiURL + "/api/projects/" + id, {
       method: "DELETE",
     });
 
@@ -25,4 +71,4 @@ const remove = async (id) => {
   }
 };
 
-export { list, remove };
+export { list, read, create, update, remove };

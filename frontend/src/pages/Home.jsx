@@ -1,6 +1,6 @@
-// Home page: welcome message, buttons to every page, and my mission statement
-import { Link, useLocation } from 'react-router-dom'
-import logo from '../assets/image_portfolio.png'
+// Home page: welcome message and my mission statement
+import { useLocation } from 'react-router-dom'
+import Nav from '../components/Nav.jsx'
 import './Home.css'
 
 function Home() {
@@ -16,20 +16,9 @@ function Home() {
           Thank you, {contactForm.firstName} {contactForm.lastName}! Your message has been received.
         </p>
       )}
+      <Nav />
       <div id="header">
-        <img id="logo" src={logo} alt="Portfolio logo" />
         <h1>Welcome to my Portfolio</h1>
-      </div>
-      {/* Big menu buttons (the Home page uses these instead of the Nav bar) */}
-      <div>
-        <ul id="home-nav">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About me</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/references">References</Link></li>
-          <li><Link to="/contact">Contact me</Link></li>
-        </ul>
       </div>
       <div id="mission">
         <h3>Mission statement</h3>

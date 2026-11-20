@@ -93,12 +93,6 @@ h1{
     color: var(--text-dim);
 }
 
-/* Round logos (nav and home page) */
-#nav-logo, #logo{
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
 /* White outline buttons: same look on every page, they turn white when you hover */
 .error-button, #resume a, .card-button, .services-button, .contact-button, .list-add{
     color: white;

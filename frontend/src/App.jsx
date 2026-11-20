@@ -8,7 +8,10 @@ import Services from './pages/Services.jsx'
 import References from './pages/References.jsx'
 import Contact from './pages/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
-import ListProjects from './components/projects/ListProjects.jsx'
+import ListProjects from './components/projects/ListProjects.jsx' 
+import AddProject from './components/projects/AddProjects.jsx'
+import AdminDashboard from './pages/admin.jsx'
+import EditProject from './components/projects/EditProjects.jsx'
 
 function App() {
   const location = useLocation()
@@ -25,6 +28,9 @@ function App() {
         <Route path="/references" element={<References />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects/list" element={<ListProjects />} />
+        <Route path="/projects/add" element={<AddProject />} />
+        <Route path="/projects/edit/:id" element={< EditProject/>} />
+        <Route path="/admin" element={<AdminDashboard />} />
         {/* "*" matches any URL not listed above, so unknown pages show the 404 page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
