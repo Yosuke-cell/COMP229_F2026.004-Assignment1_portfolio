@@ -1,5 +1,5 @@
 // App.jsx - the main component. It decides which page to show based on the URL.
-import { Routes, Route, useLocation, Router } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
@@ -8,10 +8,13 @@ import Services from './pages/Services.jsx'
 import References from './pages/References.jsx'
 import Contact from './pages/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
+import AdminDashboard from './pages/admin.jsx'
 import ListProjects from './components/projects/ListProjects.jsx' 
 import AddProject from './components/projects/AddProjects.jsx'
-import AdminDashboard from './pages/admin.jsx'
 import EditProject from './components/projects/EditProjects.jsx'
+import ListServices from './components/services/ListServices.jsx'
+import AddService from './components/services/AddServices.jsx'
+import EditService from './components/services/EditServices.jsx'
 
 function App() {
   const location = useLocation()
@@ -27,10 +30,13 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/references" element={<References />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/projects/list" element={<ListProjects />} />
         <Route path="/projects/add" element={<AddProject />} />
         <Route path="/projects/edit/:id" element={< EditProject/>} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/services/list" element={<ListServices />} />
+        <Route path="/services/add" element={<AddService />} />
+        <Route path="/services/edit/:id" element={< EditService/>} />
         {/* "*" matches any URL not listed above, so unknown pages show the 404 page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
