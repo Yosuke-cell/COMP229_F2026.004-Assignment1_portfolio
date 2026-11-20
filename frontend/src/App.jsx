@@ -18,6 +18,9 @@ import EditService from './components/services/EditServices.jsx'
 import ListReferences from './components/references/ListReferences.jsx'
 import AddReference from './components/references/AddReferences.jsx'
 import EditReference from './components/references/EditReferences.jsx'
+import ListUsers from './components/users/ListUsers.jsx'
+import AddUser from './components/users/AddUsers.jsx'
+import EditUser from './components/users/EditUsers.jsx'
 
 function App() {
   const location = useLocation()
@@ -43,6 +46,9 @@ function App() {
         <Route path="/references/list" element={<ListReferences />} />
         <Route path="/references/add" element={<AddReference />} />
         <Route path="/references/edit/:id" element={< EditReference/>} />
+        <Route path="/users/list" element={<ListUsers />} />
+        <Route path="/users/add" element={<AddUser />} />
+        <Route path="/users/edit/:id" element={< EditUser/>} />
         {/* "*" matches any URL not listed above, so unknown pages show the 404 page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
