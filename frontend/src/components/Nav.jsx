@@ -13,26 +13,27 @@ function Nav() {
       </span>
       {/* Link changes the page without reloading, unlike a normal <a> tag */}
       <ul>
+        {/* Each link has a Font Awesome icon in front of its text */}
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/"><i className="fa-solid fa-house"></i> Home</Link>
         </li>
         <li>
-          <Link to="/about">About me</Link>
+          <Link to="/about"><i className="fa-solid fa-user"></i> About me</Link>
         </li>
         <li>
-          <Link to="/projects">Projects</Link>
+          <Link to="/projects"><i className="fa-solid fa-folder-open"></i> Projects</Link>
         </li>
         <li>
-          <Link to="/services">Services</Link>
+          <Link to="/services"><i className="fa-solid fa-briefcase"></i> Services</Link>
         </li>
         <li>
-          <Link to="/references">References</Link>
+          <Link to="/references"><i className="fa-solid fa-comments"></i> References</Link>
         </li>
         <li>
-          <Link to="/contact">Contact me</Link>
+          <Link to="/contact"><i className="fa-solid fa-envelope"></i> Contact me</Link>
         </li>
         <li>
-          <Link to="/admin">Admin</Link>
+          <Link to="/admin"><i className="fa-solid fa-gear"></i> Admin</Link>
         </li>
       </ul>
     </div>

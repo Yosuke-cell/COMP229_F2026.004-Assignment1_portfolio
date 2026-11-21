@@ -33,13 +33,13 @@ function ListProjectsItem({ project, OnRemove }) {
       <td>{project.description}</td>
       <td className="list-actions">
         <Link className="list-btn edit" to={"/projects/edit/" + project.id}>
-          Edit
+          <i className="fa-solid fa-pen-to-square"></i> Edit
         </Link>
         <button
           className="list-btn delete"
           onClick={() => handleRemove(project.id)}
         >
-          Delete
+          <i className="fa-solid fa-trash"></i> Delete
         </button>
       </td>
     </tr>
